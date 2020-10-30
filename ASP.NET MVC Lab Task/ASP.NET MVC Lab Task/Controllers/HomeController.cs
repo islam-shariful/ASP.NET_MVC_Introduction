@@ -30,6 +30,7 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
                 Session["name"] = name;
                 ViewData["userName"] = userName;
                 ViewBag.bloodGroup = bloodGroup;
+                TempData["gender"] = gender;
                 return View("Test");
                 //return Content("<h1>Name is: " + name + "</h1>");
             }
