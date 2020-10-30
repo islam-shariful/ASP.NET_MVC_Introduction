@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <table>
+                <tr>
+                    <td>
+                        Name:
+                        <input type="text" name="name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Username:
+                        <input type="text" name="userName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password:
+                        <input type="password" name="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Confirm Password:
+                        <input type="password" name="confirmPassword" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Blood Group:
+                        <select name="bloodGroup" id="bloodGroup">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender:
+                        <select name="gender" id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date Of Birth:
+                        <input type="date" name="dateOfBirth" />
+                    </td>
+                </tr><tr>
+                    <td>
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
