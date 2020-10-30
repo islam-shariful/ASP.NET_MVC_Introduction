@@ -27,7 +27,9 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
                 string gender = Request["gender"];
                 string dateOfBirth= Request["dateOfBirth"];
 
-                return Content("<h1>Name is: " + name + "</h1>");
+                Session["name"] = name;
+                return View("Test");
+                //return Content("<h1>Name is: " + name + "</h1>");
             }
             else
             {
