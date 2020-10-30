@@ -28,6 +28,7 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
                 string dateOfBirth= Request["dateOfBirth"];
 
                 Session["name"] = name;
+                ViewData["userName"] = userName;
                 return View("Test");
                 //return Content("<h1>Name is: " + name + "</h1>");
             }
