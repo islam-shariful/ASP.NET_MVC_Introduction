@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASP.NET_MVC_Lab_Task.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,13 +10,13 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index   ()
+        public ActionResult Index()
         {
             //return RedirectToAction("AnotherTest");
             //return "Hello C#";
             if(Request.HttpMethod == "GET")
             {
-                return View("Test");
+                return View("Index");
             }
             else if(Request.HttpMethod == "POST")
             {
@@ -31,8 +32,19 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
                 ViewData["userName"] = userName;
                 ViewBag.bloodGroup = bloodGroup;
                 TempData["gender"] = gender;
-                return View("Test");
-                //return Content("<h1>Name is: " + name + "</h1>");
+
+                Person p = new Person()
+                {   
+                    Name = Request["name"],
+                    UserName = Request["userName"],
+                    Password = Request["password"],
+                    ConfirmPassword = Request["confirmPassword"],
+                    BloodGroup = Request["bloodGroup"],
+                    Gender = Request["gender"],
+                    DateOfBirth = Request["dateOfBirth"],
+                };
+                return View("Display",p);
+                //return Content("<h1>Name is: " + p.Gender + "</h1>");
             }
             else
             {

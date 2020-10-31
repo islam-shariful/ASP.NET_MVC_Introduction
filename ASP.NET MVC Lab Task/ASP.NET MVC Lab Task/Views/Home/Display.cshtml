@@ -1,0 +1,27 @@
+﻿@model ASP.NET_MVC_Lab_Task.Models.Person
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+</head>
+<body>
+    <div>
+        Name: @Session["name"]
+        <br />
+        Username: @ViewData["userName"]
+        <br />
+        Blood Group: @ViewBag.bloodGroup
+        <br />
+        Gender: @TempData["gender"]
+        <br />
+        Date of Birth: @Model.DateOfBirth
+    </div>
+</body>
+</html>
