@@ -16,17 +16,17 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
             return View("Index");
         }
         [HttpPost]
-        public ActionResult Display()
+        public ActionResult Display(Person pc)
         {
             Person p = new Person()
             {
-                Name = Request["name"],
-                UserName = Request["userName"],
-                Password = Request["password"],
-                ConfirmPassword = Request["confirmPassword"],
-                BloodGroup = Request["bloodGroup"],
-                Gender = Request["gender"],
-                DateOfBirth = Request["dateOfBirth"],
+                Name = pc.Name,
+                UserName = pc.UserName,
+                Password = pc.Password,
+                ConfirmPassword = pc.ConfirmPassword,
+                BloodGroup = pc.BloodGroup,
+                Gender = pc.Gender,
+                DateOfBirth = pc.DateOfBirth,
             };
             return View(p);
         }
