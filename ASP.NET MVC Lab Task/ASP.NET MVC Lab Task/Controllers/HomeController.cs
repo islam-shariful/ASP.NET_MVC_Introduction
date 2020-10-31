@@ -10,46 +10,35 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        [HttpGet]
         public ActionResult Index()
         {
-            //return RedirectToAction("AnotherTest");
-            //return "Hello C#";
-            if(Request.HttpMethod == "GET")
-            {
-                return View("Index");
-            }
-            else if(Request.HttpMethod == "POST")
-            {
-                string name = Request["name"];
-                string userName = Request["userName"];
-                string password = Request["password"];
-                string confirmPassword = Request["confirmPassword"];
-                string bloodGroup = Request["bloodGroup"];
-                string gender = Request["gender"];
-                string dateOfBirth= Request["dateOfBirth"];
+            return View("Index");
+        }
+        [HttpPost]
+        public ActionResult Display()
+        {
+            string name = Request["name"];
+            string userName = Request["userName"];
+            string bloodGroup = Request["bloodGroup"];
+            string gender = Request["gender"];
 
-                Session["name"] = name;
-                ViewData["userName"] = userName;
-                ViewBag.bloodGroup = bloodGroup;
-                TempData["gender"] = gender;
+            Session["name"] = name;
+            ViewData["userName"] = userName;
+            ViewBag.bloodGroup = bloodGroup;
+            TempData["gender"] = gender;
 
-                Person p = new Person()
-                {   
-                    Name = Request["name"],
-                    UserName = Request["userName"],
-                    Password = Request["password"],
-                    ConfirmPassword = Request["confirmPassword"],
-                    BloodGroup = Request["bloodGroup"],
-                    Gender = Request["gender"],
-                    DateOfBirth = Request["dateOfBirth"],
-                };
-                return View("Display",p);
-                //return Content("<h1>Name is: " + p.Gender + "</h1>");
-            }
-            else
+            Person p = new Person()
             {
-                return Content("<h1>It doesn't work</h1>");
-            }
+                Name = Request["name"],
+                UserName = Request["userName"],
+                Password = Request["password"],
+                ConfirmPassword = Request["confirmPassword"],
+                BloodGroup = Request["bloodGroup"],
+                Gender = Request["gender"],
+                DateOfBirth = Request["dateOfBirth"],
+            };
+            return View("Display",p);
         }
         public String anotherTest(int? id =null)
         {
