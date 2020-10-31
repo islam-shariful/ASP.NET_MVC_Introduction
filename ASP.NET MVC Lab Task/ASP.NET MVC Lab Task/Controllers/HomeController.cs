@@ -16,18 +16,8 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
             return View("Index");
         }
         [HttpPost]
-        public ActionResult Display(Person pc)
+        public ActionResult Display(Person p)
         {
-            Person p = new Person()
-            {
-                Name = pc.Name,
-                UserName = pc.UserName,
-                Password = pc.Password,
-                ConfirmPassword = pc.ConfirmPassword,
-                BloodGroup = pc.BloodGroup,
-                Gender = pc.Gender,
-                DateOfBirth = pc.DateOfBirth,
-            };
             return View(p);
         }
         public String anotherTest(int? id =null)
