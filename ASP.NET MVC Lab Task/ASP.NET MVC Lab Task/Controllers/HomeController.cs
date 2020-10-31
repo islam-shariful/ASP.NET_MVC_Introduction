@@ -16,11 +16,11 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
             return View("Index");
         }
         [HttpPost]
-        public ActionResult Display(FormCollection fc)
+        public ActionResult Display(FormCollection fc, string name)
         {
             Person p = new Person()
             {
-                Name = fc["name"],
+                Name = name,
                 UserName = fc["userName"],
                 Password = fc["password"],
                 ConfirmPassword = fc["confirmPassword"],
