@@ -13,15 +13,11 @@
 </head>
 <body>
     <div>
-        Name: @Session["name"]
-        <br />
-        Username: @ViewData["userName"]
-        <br />
-        Blood Group: @ViewBag.bloodGroup
-        <br />
-        Gender: @TempData["gender"]
-        <br />
-        Date of Birth: @Model.DateOfBirth
+        Name: @Model.Name <br />
+        Username: @Model.UserName <br />
+        Blood Group: @Model.BloodGroup <br />
+        Gender: @Model.Gender <br />
+        Date of Birth: @Model.DateOfBirth <br />
     </div>
 </body>
 </html>

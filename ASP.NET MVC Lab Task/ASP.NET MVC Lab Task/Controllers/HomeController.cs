@@ -16,29 +16,19 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
             return View("Index");
         }
         [HttpPost]
-        public ActionResult Display()
+        public ActionResult Display(FormCollection fc)
         {
-            string name = Request["name"];
-            string userName = Request["userName"];
-            string bloodGroup = Request["bloodGroup"];
-            string gender = Request["gender"];
-
-            Session["name"] = name;
-            ViewData["userName"] = userName;
-            ViewBag.bloodGroup = bloodGroup;
-            TempData["gender"] = gender;
-
             Person p = new Person()
             {
-                Name = Request["name"],
-                UserName = Request["userName"],
-                Password = Request["password"],
-                ConfirmPassword = Request["confirmPassword"],
-                BloodGroup = Request["bloodGroup"],
-                Gender = Request["gender"],
-                DateOfBirth = Request["dateOfBirth"],
+                Name = fc["name"],
+                UserName = fc["userName"],
+                Password = fc["password"],
+                ConfirmPassword = fc["confirmPassword"],
+                BloodGroup = fc["bloodGroup"],
+                Gender = fc["gender"],
+                DateOfBirth = fc["dateOfBirth"],
             };
-            return View("Display",p);
+            return View(p);
         }
         public String anotherTest(int? id =null)
         {
