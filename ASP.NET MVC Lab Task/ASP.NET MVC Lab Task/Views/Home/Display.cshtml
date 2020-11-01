@@ -1,6 +1,4 @@
-﻿@model ASP.NET_MVC_Lab_Task.Models.Person
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -13,11 +11,11 @@
 </head>
 <body>
     <div>
-        Name: @Model.Name <br />
-        Username: @Model.UserName <br />
-        Blood Group: @Model.BloodGroup <br />
-        Gender: @Model.Gender <br />
-        Date of Birth: @Model.DateOfBirth <br />
+        Name: @TempData["name"] <br />
+        Username: @TempData["userName"] <br />
+        Blood Group: @TempData["bloodGroup"] <br />
+        Gender: @TempData["gender"] <br />
+        Date of Birth: @TempData["dateOfBirth"] <br />
     </div>
 </body>
 </html>

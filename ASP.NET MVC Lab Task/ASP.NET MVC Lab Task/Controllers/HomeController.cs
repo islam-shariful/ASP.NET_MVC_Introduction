@@ -13,17 +13,25 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View("Index");
+            return View();
         }
+        // POST: Home
         [HttpPost]
-        public ActionResult Display(Person p)
+        public ActionResult Index(Person p)
         {
-            return View(p);
+            TempData["name"] = p.Name;
+            TempData["userName"] = p.UserName;
+            TempData["bloodGroup"] = p.BloodGroup;
+            TempData["gender"] = p.Gender;
+            TempData["dateOfBirth"] = p.DateOfBirth;
+
+            return RedirectToAction("Display");
         }
-        public String anotherTest(int? id =null)
+        // GET: Display
+        [HttpGet]
+        public ActionResult Display()
         {
-            return "This is another method " + id.ToString();
-            //return View();
+            return View();
         }
     }
 }
