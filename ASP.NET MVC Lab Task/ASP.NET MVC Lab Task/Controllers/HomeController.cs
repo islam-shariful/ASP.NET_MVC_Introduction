@@ -19,11 +19,7 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
         [HttpPost]
         public ActionResult Index(Person p)
         {
-            TempData["name"] = p.Name;
-            TempData["userName"] = p.UserName;
-            TempData["bloodGroup"] = p.BloodGroup;
-            TempData["gender"] = p.Gender;
-            TempData["dateOfBirth"] = p.DateOfBirth;
+            TempData["person"] = p; 
 
             return RedirectToAction("Display");
         }
@@ -31,7 +27,8 @@ namespace ASP.NET_MVC_Lab_Task.Controllers
         [HttpGet]
         public ActionResult Display()
         {
-            return View();
+            Person p = TempData["person"] as Person;
+            return View(p);
         }
     }
 }
